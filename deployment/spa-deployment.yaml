@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.26.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: spa
+  name: spa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: spa
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.26.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: spa
+    spec:
+      containers:
+        - image: k3d-registry.localhost:12345/keycloak-demo_spa:latest
+          name: spa
+          ports:
+            - containerPort: 4200
+          resources: {}
+      restartPolicy: Always
+status: {}
