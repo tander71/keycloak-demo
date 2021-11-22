@@ -1,0 +1,22 @@
+version: "3"
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:13.0.1
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Keycloak/Volumes/data:/opt/jboss/keycloak/standalone/data
+      - ./Keycloak/Volumes/deployments:/opt/jboss/keycloak/standalone/deployments
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+  api:
+    build:
+      context: ./Api
+    ports: 
+      - "5005:80"
+  spa:
+    build:
+      context: ./Spa
+    ports: 
+      - "4200:4200"
