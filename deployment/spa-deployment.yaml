@@ -24,7 +24,7 @@ spec:
         io.kompose.service: spa
     spec:
       containers:
-        - image: k3d-registry.localhost:12345/keycloak-demo_spa:latest
+        - image: tander71/keycloak-demo_spa:latest
           name: spa
           ports:
             - containerPort: 4200
