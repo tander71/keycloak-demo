@@ -5,7 +5,7 @@ A demo of Keycloak with an Angular application and an Asp.net Core 3.1 Web API t
 
 Run `docker compose up --build`.
 
-This exposes three services, Keycloak on port 8080, and Angular SPA on port 4200 and an asp.net core web-api on 5000. 
+This exposes three services, Keycloak on port 8080, and Angular SPA on port 4200 and an asp.net core web-api on 5005. 
 
 Open up the client app at [http://localhost:4200](http://localhost:4200). Click the Call API button without logging in and you'll see the web-api returning 401 un-authorized error. But if you login using the demo account below and then click "Call API" you'll see successful response with JSON data.
 Demo User:
